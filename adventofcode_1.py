@@ -8,7 +8,7 @@ def getInput(filepath):
 ### DAY 7
 
 def a7():
-	data = getInput("input7.txt").split('\n')
+	data = getInput("src/inputs/input7.txt").split('\n')
 	
 	def makeTree(data):
 		tree = dict({"/":{}})
@@ -78,7 +78,7 @@ a7()
 ### DAY 6
 
 def a6():
-	data = getInput("input6.txt")
+	data = getInput("src/inputs/input6.txt")
 	def solve(offset):
 		ticker = 0
 		for u in range(0, len(data) - offset):
@@ -95,7 +95,7 @@ def a6():
 ### DAY 5
 
 def a5():
-	data = getInput("input5.txt").split("\n")
+	data = getInput("src/inputs/input5.txt").split("\n")
 	crates, instructions = data[:9], data[10:]
 	def inst(instruction):
 		amount = int(instruction.split(" ")[1])
@@ -168,7 +168,7 @@ def a5():
 ### DAY 4
 
 def a4():
-	data = getInput("input4.txt").split('\n')
+	data = getInput("src/inputs/input4.txt").split('\n')
 
 	def withRanges(inputs):
 		sections = []
@@ -217,7 +217,7 @@ def a4():
 ### DAY 3
 
 def a3():
-	data = getInput("input3.txt").split('\n')
+	data = getInput("src/inputs/input3.txt").split('\n')
 
 
 	def dehexString(chrs):
@@ -289,7 +289,7 @@ if ((r1 % 3) + 1 = r2 % 3) => win
 (r1 - r0) % 3
 iff round[1]
 """
-	data = getInput("input2.txt").split('\n')
+	data = getInput("src/inputs/input2.txt").split('\n')
 
 	def get_score(r1, r2):
 		# 0 tie
@@ -360,7 +360,7 @@ iff round[1]
 ### DAY 1
 
 def a1():
-	raw_data = getInput("input1.txt")
+	raw_data = getInput("src/inputs/input1.txt")
 	data = [k for k in raw_data.split("\n")]
 	print(data[0:15])
 	def part1():
