@@ -6,14 +6,14 @@ pub fn solve_1(lines: Vec<String>) -> i32 {
     let mut total = 0;
     for l in lines {
         // println!("{}", l);
-        let parts = l.split(" ").collect::<Vec<&str>>();
-        let command = parts[0].clone();
+        let parts = l.split(' ').collect::<Vec<&str>>();
+        let command = parts[0];
         let arg;
         cycle += 1;
         print_sprite(cycle, register);
         match command {
             "addx" => {
-                arg = parts[1].clone();
+                arg = parts[1];
                 // check for mod 40
                 total += get_signal_strength(cycle, register);
                 cycle += 1;
@@ -39,7 +39,7 @@ fn print_sprite(cycle: u32, register: i32) {
     if modd == 0 {
         println!("  {}", cycle)
     }
-    if (-1..=1).filter(|l| (register + l) == modd as i32).collect::<Vec<i32>>().len() > 0 {
+    if (-1..=1).any(|l| (register + l) == modd as i32) {
         print!("#");
     } else {
         print!(" ");

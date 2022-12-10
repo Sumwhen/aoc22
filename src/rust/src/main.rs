@@ -1,11 +1,9 @@
 extern crate core;
 
-use std::collections::{BTreeSet, HashMap, HashSet};
-use std::fmt::{Debug, Formatter};
+use std::collections::{HashMap, HashSet};
 use std::io::prelude::*;
 use std::io::BufReader;
 use std::fs::File;
-use std::ops::{Add, AddAssign, Mul, Sub, SubAssign};
 use ndarray::prelude::*;
 mod days;
 
@@ -23,8 +21,8 @@ fn main() {
     } else {
         k.push_str("inputs/input");
     }
-    k.push_str(&FILENAME_ADDITION);
-    k.push_str(".");
+    k.push_str(FILENAME_ADDITION);
+    k.push('.');
     k.push_str(&format!("{}", DAY));
     println!("path is {}", k);
     let input = read_lines(&k);
@@ -34,7 +32,7 @@ fn main() {
 
 fn read_lines(path: &str) -> Vec<String> {
     // first, reader
-    let f = File::open(path).expect(&format!("file not found:{}", path));
+    let f = File::open(path).unwrap_or_else(|_| panic!("file not found:{}", path));
     let br = BufReader::new(f);
     br.lines()
         .map(|l| l.expect("parsing line failed"))
