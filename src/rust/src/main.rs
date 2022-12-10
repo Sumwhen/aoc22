@@ -1,5 +1,4 @@
-
-
+extern crate core;
 
 use std::collections::{BTreeSet, HashMap, HashSet};
 use std::fmt::{Debug, Formatter};
@@ -11,21 +10,23 @@ use ndarray::prelude::*;
 mod days;
 
 const DAY: u32 = 10;
-const TEST: bool = true;
+const TEST: bool = false;
 const FILENAME_ADDITION: &str = "";
 fn main() {
     // println!("part 1: {}", aoc9part1());
 
     // println!("part 2: {}", part2(read_lines("inputs/input9.txt")))
     println!("       ======= DAY {} =======\n", DAY);
-    let mut k = String::new();
+    let mut k = String::with_capacity(30);
     if TEST {
         k.push_str("tests/test");
     } else {
         k.push_str("inputs/input");
     }
-    k.push_str(FILENAME_ADDITION);
-    k.push_str(stringify!(".", DAY));
+    k.push_str(&FILENAME_ADDITION);
+    k.push_str(".");
+    k.push_str(&format!("{}", DAY));
+    println!("path is {}", k);
     let input = read_lines(&k);
     println!("day 10 pt 1: {}", days::day10::solve_1(input));
 
@@ -33,7 +34,7 @@ fn main() {
 
 fn read_lines(path: &str) -> Vec<String> {
     // first, reader
-    let f = File::open(path).expect("file not found");
+    let f = File::open(path).expect(&format!("file not found:{}", path));
     let br = BufReader::new(f);
     br.lines()
         .map(|l| l.expect("parsing line failed"))
