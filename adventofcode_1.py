@@ -1,4 +1,4 @@
-#! /bin/env python3
+#! /days/env python3
 
 
 def getInput(filepath):

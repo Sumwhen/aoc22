@@ -1,0 +1,1 @@
+{"rustc":2347157018072859861,"features":"","target":0,"profile":0,"path":0,"deps":[[13693161222186710724,"build_script_build",false,14242498997015992301]],"local":[{"RerunIfChanged":{"output":"debug\\build\\rust-22f7528bddb49948\\output","paths":["src/hello.c"]}}],"rustflags":[],"metadata":0,"config":0,"compile_kind":0}
