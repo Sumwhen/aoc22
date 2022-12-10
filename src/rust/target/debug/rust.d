@@ -1,1 +1,0 @@
-C:\Users\Simon\PycharmProjects\aoc22\src\rust\target\debug\rust.exe: C:\Users\Simon\PycharmProjects\aoc22\src\rust\src\days\day10.rs C:\Users\Simon\PycharmProjects\aoc22\src\rust\src\days.rs C:\Users\Simon\PycharmProjects\aoc22\src\rust\src\main.rs
